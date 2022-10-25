@@ -1,0 +1,13 @@
+<div *ngFor="let item of homepageData.section">
+  <div>{{item.code}}</div>
+  <div>{{item.index}}</div>
+  <div>{{item.headerTitle}}</div>
+  <div *ngFor="let title of item.titles">
+    {{title.lang}} --- {{title.title}}
+  </div>
+  <div>
+    <app-attribute [homepageData]="homepageData" [indexSection]="item.index" [attributeData]="item.attributes">
+    </app-attribute>
+  </div>
+  <hr>
+</div>

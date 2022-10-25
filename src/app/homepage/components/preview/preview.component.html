@@ -1,0 +1,9 @@
+<div style="display: flex; justify-content: center;">
+  <button>vietnamese</button>
+  <button>english</button>
+</div>
+<div *ngFor="let item of homepageData.section">
+  <div *ngFor="let title of item.titles">
+    {{title.lang}}
+  </div>
+</div>

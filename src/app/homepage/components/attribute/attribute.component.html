@@ -1,0 +1,28 @@
+<div *ngFor="let item of attributeData">
+  {{item.key}} ==== {{item.value}}
+</div>
+<button (click)="showAddAttribute()">add</button>
+<div *ngIf="isAddAttribute">
+  <form nz-form nzLayout="vertical" [formGroup]="validateAttributeForm" (ngSubmit)="handleAddAttribute(indexSection)">
+
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="codeValid">
+        <input nz-input formControlName="key" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control>
+        <input nz-input formControlName="value" />
+      </nz-form-control>
+    </nz-form-item>
+
+  </form>
+  <button (click)="handleAddAttribute(indexSection)">Submit</button>
+</div>
+
+<ng-template #codeValid let-control>
+  <ng-container *ngIf="control.hasError('required')">VALIDATE_FORM.REQUIRED</ng-container>
+  <ng-container *ngIf="control.hasError('whiteSpace')">VALIDATE_FORM.NO_SPACE</ng-container>
+  <ng-container *ngIf="control.hasError('already')">VALIDATE_FORM.ALREADY</ng-container>
+</ng-template>
