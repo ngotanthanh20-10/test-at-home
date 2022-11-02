@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test';
+  getData(event: any) {
+    console.log(event);
+  }
 }

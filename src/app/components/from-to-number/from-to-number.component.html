@@ -1,0 +1,33 @@
+<div nz-col nzSpan="24" nz-row>
+  <span class="{{'filter-container-field-title'}}">
+    {{ titleField }}
+  </span>
+  <form nz-form [formGroup]="orderForm" (ngSubmit)="submitForm()" (keydown.enter)="submitForm()">
+    <div nz-row [nzGutter]="12">
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-control [nzErrorTip]="errorOption">
+            <nz-input-number style="width: 100%" [nzPlaceHolder]="fromPlaceHolder" formControlName="fromNumber"
+              [nzStep]="step" (ngModelChange)="onChangeFromNumber($event)">
+            </nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-number style="width: 100%" [nzPlaceHolder]="toPlaceHolder" formControlName="toNumber"
+              [nzStep]="step" (ngModelChange)="onChangeToNumber($event)">
+            </nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #errorOption let-control>
+  <ng-container *ngIf="control.hasError('required')">
+    <span>validate required</span>
+  </ng-container>
+</ng-template>
