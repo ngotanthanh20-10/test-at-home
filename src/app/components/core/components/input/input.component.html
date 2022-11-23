@@ -1,0 +1,12 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control [nzErrorTip]="error">
+      <div class="label-title">{{labelTitle}}</div>
+      <input formControlName="data" nz-input [placeholder]="placeholder">
+    </nz-form-control>
+  </nz-form-item >
+</form>
+
+<ng-template #error let-control>
+  <ng-container *ngIf="control.hasError('required')">Plase enter {{labelTitle}}</ng-container>
+</ng-template>

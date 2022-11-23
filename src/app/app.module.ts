@@ -19,6 +19,7 @@ import { HomepageDetailComponent } from './homepage/homepage-detail/homepage-det
 import { ChildComponent } from './components/child/child.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { FromToNumberComponent } from './components/from-to-number/from-to-number.component';
+import { CoreModule } from './components/core/core.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,10 @@ import { FromToNumberComponent } from './components/from-to-number/from-to-numbe
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+
+    CoreModule,
+
+
     NzModalModule,
     NzFormModule,
     NzInputModule,
